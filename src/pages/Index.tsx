@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import ReelsSection from '@/components/ReelsSection';
+import VideoCarousel from '@/components/VideoCarousel';
 import WhyModernKisan from '@/components/WhyModernKisan';
 import MasterclassCategories from '@/components/MasterclassCategories';
 import HowItWorks from '@/components/HowItWorks';
@@ -45,7 +45,7 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
-        <ReelsSection />
+        <VideoCarousel />
         <WhyModernKisan />
         <MasterclassCategories />
         <HowItWorks />
