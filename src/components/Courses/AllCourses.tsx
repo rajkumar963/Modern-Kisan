@@ -55,7 +55,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
   image,
 }) => {
   return (
-    <div className="bg-white shadow-lg rounded-2xl p-6 w-full hover:shadow-xl transition flex flex-col mt-12">
+    <div className="bg-white shadow-lg rounded-2xl p-6 w-full hover:shadow-xl transition flex flex-col mt-[50px]">
       <img src={image} alt={title} className="w-full h-48 object-cover" />
       <div className="mt-4">
         <h3 className="text-2xl font-bold text-gray-800">{title}</h3>
