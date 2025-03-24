@@ -46,8 +46,8 @@ const Index = () => {
       <main>
         <Hero />
         <VideoCarousel />
-        <WhyModernKisan />
         <MasterclassCategories />
+        <WhyModernKisan />
         <HowItWorks />
         <GovernmentGrants />
         <Marketplace />
