@@ -33,7 +33,7 @@ const blogPosts: BlogPost[] = [
     date: "July 3, 2023",
     author: "Rajiv Kapoor",
     category: "Digital Learning",
-    image: "https://files.oaiusercontent.com/file-KigqPckUsDfJnjrFMYYSuj?se=2025-03-25T09%3A37%3A22Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D48a8def7-c057-473e-a28e-a9ddb4fe6fa8.webp&sig=hZNkxR8r3q1py9mPsbId3/0ALkmeLwP3NywqsOUxUME%3D",
+    image: "https://img.freepik.com/premium-photo/smart-farming-digital-technology-agriculture-app_1016675-2304.jpg?uid=R187627718&ga=GA1.1.856026252.1735303750&semt=ais_hybrid",
     icon: GraduationCap
   },
   {
@@ -43,7 +43,7 @@ const blogPosts: BlogPost[] = [
     date: "August 12, 2023",
     author: "Meera Patel",
     category: "Farmer Stories",
-    image: "https://files.oaiusercontent.com/file-LANCw4EyfbA2vdEt2eJ5n2?se=2025-03-25T09%3A57%3A33Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D09159e26-b852-4770-b882-7746097361ca.webp&sig=MnWJp7FoP/GeVb/34rVli%2BKXZy6o2afSeBokXHJ8FvE%3D",
+    image: "https://img.freepik.com/premium-photo/autonomous-agriculture-drone-flying-analyze-agricultural-plot_84831-1720.jpg?uid=R187627718&ga=GA1.1.856026252.1735303750&semt=ais_hybrid",
     icon: User
   }
 ];
