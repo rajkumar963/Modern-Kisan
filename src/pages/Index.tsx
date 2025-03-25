@@ -14,6 +14,7 @@ import GovernmentGrants from '@/components/GovernmentGrants';
 import BlogSection from '@/components/BlogSection';
 import Marketplace from '@/components/Marketplace';
 import Footer from '@/components/Footer';
+import AIFeatures from '@/components/AIFeatures';
 
 const Index = () => {
   // Animation for elements when they come into view
@@ -47,6 +48,7 @@ const Index = () => {
         <Hero />
         <VideoCarousel />
         <WhyModernKisan />
+        <AIFeatures />
         <MasterclassCategories />
         <HowItWorks />
         <GovernmentGrants />
