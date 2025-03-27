@@ -24,7 +24,7 @@ const farmProducts: Product[] = [
     rating: 4.8,
     reviews: 124,
     category: "Equipment",
-    image: "https://images.unsplash.com/photo-1598508918941-5b42f21afd8e?q=80&w=1470&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=1472&auto=format&fit=crop"
   },
   {
     id: 2,
@@ -44,7 +44,7 @@ const farmProducts: Product[] = [
     rating: 4.9,
     reviews: 215,
     category: "Supplies",
-    image: "https://images.unsplash.com/photo-1585537884213-c7cf86961ec2?q=80&w=1374&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=1558&auto=format&fit=crop"
   },
   {
     id: 4,

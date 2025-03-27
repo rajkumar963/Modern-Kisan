@@ -59,7 +59,6 @@ const Index = () => {
         <Testimonials />
         <Partners />
       </main>
-      <Footer />
     </div>
   );
 };
