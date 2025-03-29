@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
@@ -15,6 +14,7 @@ import BlogSection from '@/components/BlogSection';
 import Marketplace from '@/components/Marketplace';
 import Footer from '@/components/Footer';
 import Chatbot from '@/components/ui/ChatBot';
+import AIFeatures from '@/components/AIFeatures';
 
 const Index = () => {
   // Animation for elements when they come into view
@@ -47,8 +47,9 @@ const Index = () => {
       <main>
         <Hero />
         <VideoCarousel />
-        <MasterclassCategories />
         <WhyModernKisan />
+        <AIFeatures />
+        <MasterclassCategories />
         <HowItWorks />
         <GovernmentGrants />
         <Marketplace />

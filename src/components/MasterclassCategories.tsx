@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Cpu, Leaf, Droplet, Building, TrendingUp, Flower, Globe } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 type Category = {
   id: string;
@@ -237,7 +238,7 @@ const MasterclassCategories = () => {
   ];
 
   const currentCategory = categories.find(cat => cat.id === activeCategory) || categories[0];
-
+  const nevigation = useNavigate();
   return (
     <section id="masterclasses" className="section-padding bg-kisan-50">
       <div className="max-w-7xl mx-auto">
@@ -287,7 +288,7 @@ const MasterclassCategories = () => {
 
         {/* View All Courses Button */}
         <div className="text-center mt-12">
-          <button className="btn-secondary">
+          <button className="btn-secondary" onClick={() => nevigation('/allcourses')} >
             View All Courses
           </button>
         </div>
@@ -310,6 +311,7 @@ const CourseCard = ({ course, index }: CourseCardProps) => {
     'Advanced': 'bg-red-50 text-red-700',
   };
 
+  
   return (
     <div 
       className="glass-card rounded-2xl overflow-hidden hover-lift animate-on-scroll"

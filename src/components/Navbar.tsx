@@ -31,7 +31,7 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2">
+        <a href="/" className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-full bg-kisan-500 flex items-center justify-center">
             <span className="text-white font-bold text-sm">MK</span>
           </div>
@@ -87,7 +87,7 @@ const Navbar = () => {
 
 const NavLinks = ({ isScrolled }: { isScrolled: boolean }) => {
   const links = [
-    { name: 'Home', href: '#' },
+    { name: 'Home', href: '/' },
     { name: 'Courses', href: '#masterclasses' },
     { name: 'How It Works', href: '#how-it-works' },
     { name: 'About Us', href: '#company' },
@@ -115,7 +115,7 @@ const NavLinks = ({ isScrolled }: { isScrolled: boolean }) => {
 
 const MobileNavLinks = ({ setIsOpen }: { setIsOpen: (value: boolean) => void }) => {
   const links = [
-    { name: 'Home', href: '#' },
+    { name: 'Home', href: '/' },
     { name: 'Courses', href: '#masterclasses' },
     { name: 'How It Works', href: '#how-it-works' },
     { name: 'About Us', href: '#company' },
