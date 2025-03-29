@@ -1,6 +1,5 @@
-
-import React from 'react';
-import { IndianRupee, Award, Calendar, Link } from 'lucide-react';
+import React, { useState } from 'react';
+import { IndianRupee, Award, Calendar, Link, PlayCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -14,6 +13,29 @@ const GovernmentGrants = () => {
     { id: 'organic', label: 'Organic Farming' },
   ];
 
+  const categoryVideos = {
+    crop: {
+      videoId: "76_dZWWQohM",
+      title: "Understanding Crop Subsidies in India",
+      description: "This video explains the various crop subsidy programs available to Indian farmers, including how to apply, eligibility criteria, and tips for successful applications."
+    },
+    equipment: {
+      videoId: "iP83PT1PB0c",
+      title: "Agricultural Equipment Subsidies Guide",
+      description: "Learn about government support for farm mechanization, the types of equipment covered under subsidy schemes, and how to access financial assistance for modern farming tools."
+    },
+    irrigation: {
+      videoId: "MxEg4Rvm9ao",
+      title: "Water Management and Irrigation Subsidies",
+      description: "This video covers the various irrigation subsidy programs available to farmers, including micro-irrigation systems, water conservation techniques, and sustainable water management practices."
+    },
+    organic: {
+      videoId: "aAMotAMyS9s",
+      title: "Organic Farming Support Programs",
+      description: "Discover the financial incentives available for adopting organic farming practices, certification processes, and marketing opportunities for organic produce."
+    }
+  };
+
   const grants = {
     crop: [
       {
@@ -24,15 +46,6 @@ const GovernmentGrants = () => {
         description: 'Direct income support of ₹6,000 per year in three equal installments to all land-holding farmer families.',
         eligibility: 'All land-holding farmers with cultivable land.',
         link: 'https://pmkisan.gov.in/'
-      },
-      {
-        id: 'nfsm',
-        title: 'National Food Security Mission',
-        amount: 'Up to ₹50,000 per hectare',
-        deadline: 'Seasonal application',
-        description: 'Support for increasing production of rice, wheat, pulses, coarse cereals, and commercial crops.',
-        eligibility: 'Small and marginal farmers growing targeted crops.',
-        link: 'https://www.nfsm.gov.in/'
       },
     ],
     equipment: [
@@ -45,15 +58,6 @@ const GovernmentGrants = () => {
         eligibility: 'Individual farmers, cooperatives, and FPOs.',
         link: 'https://farmech.dac.gov.in/'
       },
-      {
-        id: 'custom-hiring',
-        title: 'Custom Hiring Centers',
-        amount: 'Up to ₹25 lakh',
-        deadline: 'Quarterly review',
-        description: 'Establish custom hiring centers for farm equipment to be used by small farmers.',
-        eligibility: 'Entrepreneurs, cooperatives, and self-help groups.',
-        link: 'https://agrimachinery.nic.in/'
-      },
     ],
     irrigation: [
       {
@@ -64,15 +68,6 @@ const GovernmentGrants = () => {
         description: 'Support for micro-irrigation systems such as drip and sprinkler irrigation.',
         eligibility: 'All categories of farmers.',
         link: 'https://pmksy.gov.in/'
-      },
-      {
-        id: 'didf',
-        title: 'Micro Irrigation Fund',
-        amount: 'Low-interest loans',
-        deadline: 'Year-round',
-        description: 'Special funding for implementing water-efficient irrigation systems.',
-        eligibility: 'Small and marginal farmers in water-stressed areas.',
-        link: 'https://pib.gov.in/PressReleasePage.aspx?PRID=1579971'
       },
     ],
     organic: [
@@ -85,20 +80,11 @@ const GovernmentGrants = () => {
         eligibility: 'Farmers willing to convert to organic farming practices.',
         link: 'https://pgsindia-ncof.gov.in/'
       },
-      {
-        id: 'movcdner',
-        title: 'Mission Organic Value Chain Development',
-        amount: 'Up to ₹2 lakh',
-        deadline: 'Application cycle in April',
-        description: 'Support for organic farming in North Eastern Region through value chain approach.',
-        eligibility: 'Farmers in North-Eastern states practicing organic farming.',
-        link: 'https://agricoop.nic.in/en/divisiontype/horticulture/programmes-schemes-and-initiatives'
-      },
     ],
   };
 
-  const renderGrant = (grant: any) => (
-    <Card key={grant.id} className="transition-all duration-300 hover:shadow-md">
+  const renderGrant = (grant) => (
+    <Card key={grant.id} className="transition-all duration-300 hover:shadow-md md:p-4">
       <CardHeader>
         <CardTitle className="flex justify-between items-center">
           <span>{grant.title}</span>
@@ -128,6 +114,39 @@ const GovernmentGrants = () => {
     </Card>
   );
 
+  const renderCategoryContent = (category) => {
+    const video = categoryVideos[category];
+    
+    return (
+      <div className="flex flex-col md:flex-row gap-6">
+        {/* Left division - Video */}
+        <div className="w-full md:w-1/2 bg-white rounded-lg shadow overflow-hidden">
+          <div className="w-full h-full">
+            <iframe 
+              className="w-full h-full"
+              src={`https://www.youtube.com/embed/${video.videoId}`}
+              title={video.title}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+          {/* <div className="p-4">
+            <h3 className="font-medium text-lg mb-2">{video.title}</h3>
+            <p className="text-sm text-gray-600">{video.description}</p>
+          </div> */}
+        </div>
+        
+        {/* Right division - Grant */}
+        <div className="w-full md:w-1/2 ">
+          <div className="grid grid-cols-1 gap-8 ">
+            {grants[category].map(renderGrant)}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <section id="government-grants" className="section-padding bg-gray-50">
       <div className="max-w-7xl mx-auto">
@@ -141,7 +160,7 @@ const GovernmentGrants = () => {
         </div>
 
         <Tabs defaultValue="crop" className="w-full">
-          <div className="flex justify-center mb-8">
+          <div className="flex justify-center mb-8 ">
             <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 bg-kisan-50 p-1">
               {grantCategories.map((category) => (
                 <TabsTrigger 
@@ -157,9 +176,7 @@ const GovernmentGrants = () => {
 
           {Object.entries(grants).map(([category, categoryGrants]) => (
             <TabsContent key={category} value={category} className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-on-scroll">
-                {categoryGrants.map(renderGrant)}
-              </div>
+              {renderCategoryContent(category)}
             </TabsContent>
           ))}
         </Tabs>

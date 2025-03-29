@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
@@ -14,6 +13,7 @@ import GovernmentGrants from '@/components/GovernmentGrants';
 import BlogSection from '@/components/BlogSection';
 import Marketplace from '@/components/Marketplace';
 import Footer from '@/components/Footer';
+import Chatbot from '@/components/ui/ChatBot';
 import AIFeatures from '@/components/AIFeatures';
 
 const Index = () => {
@@ -58,7 +58,9 @@ const Index = () => {
         <DraggableCourseCards />
         <Testimonials />
         <Partners />
+        <Chatbot />
       </main>
+      <Footer />
     </div>
   );
 };
